@@ -13,18 +13,18 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "booking")
 public class Booking {
-	
+
 	@Id
 	@GeneratedValue
 	private int id;
-	
+
 	@Column(name = "date")
 	private Date date;
-	
+
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "hotel_id", referencedColumnName = "id")
 	private Hotel hotel;
-	
+
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "guest_id", referencedColumnName = "id")
 	private Guest guest;

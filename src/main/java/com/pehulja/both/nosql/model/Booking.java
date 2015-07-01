@@ -10,13 +10,13 @@ import org.springframework.data.couchbase.core.mapping.Field;
 public class Booking {
 	@Id
 	private int id;
-	
+
 	@Field
 	private Date date;
-	
+
 	@Field
 	private Hotel hotel;
-	
+
 	@Field
 	private Guest guest;
 
@@ -54,7 +54,6 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [id=" + id + ", date=" + date + ", hotel=" + hotel
-				+ ", guest=" + guest + "]";
+		return "Booking [id=" + id + ", date=" + date + ", hotel=" + hotel + ", guest=" + guest + "]";
 	}
 }

@@ -1,9 +1,8 @@
 package com.pehulja.both.dto;
 
-
 public class Hotel {
 	private int id;
-	
+
 	private String name;
 
 	public int getId() {

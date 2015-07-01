@@ -1,13 +1,14 @@
 package com.pehulja.both;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
 public class BothMySqlVsNoSqlApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(BothMySqlVsNoSqlApplication.class, args);
-    }
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+		ctx.getEnvironment().setActiveProfiles("jpa");
+		ctx.scan("com.pehulja.both");
+		ctx.refresh();
+	}
 
 }

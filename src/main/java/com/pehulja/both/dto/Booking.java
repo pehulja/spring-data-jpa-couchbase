@@ -3,9 +3,9 @@ package com.pehulja.both.dto;
 import java.util.Date;
 
 public class Booking {
-	
+
 	private int id;
-	
+
 	private Date date;
 	private Hotel hotel;
 	private Guest guest;
@@ -44,7 +44,6 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [id=" + id + ", date=" + date + ", hotel=" + hotel
-				+ ", guest=" + guest + "]";
+		return "Booking [id=" + id + ", date=" + date + ", hotel=" + hotel + ", guest=" + guest + "]";
 	}
 }

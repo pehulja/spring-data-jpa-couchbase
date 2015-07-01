@@ -8,7 +8,7 @@ import org.springframework.data.couchbase.core.mapping.Field;
 public class Guest {
 	@Id
 	private int id;
-	
+
 	@Field
 	private String fio;
 
@@ -32,5 +32,5 @@ public class Guest {
 	public String toString() {
 		return "Guest [id=" + id + ", fio=" + fio + "]";
 	}
-	
+
 }

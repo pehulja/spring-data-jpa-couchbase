@@ -11,8 +11,8 @@ import com.pehulja.both.sql.model.Booking;
 import com.pehulja.both.sql.model.Guest;
 
 @Profile("jpa")
-public interface BookingRepository extends JpaRepository<Booking, Integer>{
-	
+public interface BookingRepository extends JpaRepository<Booking, Integer> {
+
 	@Query("select booking from Booking booking where booking.guest = :guest")
 	public List<Booking> getBookingsByGuest(@Param("guest") Guest guest);
 }

@@ -1,10 +1,9 @@
 package com.pehulja.both.dto;
 
-
 public class Guest {
-	
+
 	private int id;
-	
+
 	private String fio;
 
 	public int getId() {
@@ -27,5 +26,5 @@ public class Guest {
 	public String toString() {
 		return "Guest [id=" + id + ", fio=" + fio + "]";
 	}
-	
+
 }

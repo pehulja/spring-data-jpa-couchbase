@@ -8,8 +8,10 @@ import com.pehulja.both.dto.Hotel;
 
 public interface CRUDService {
 	public Booking create(Booking booking);
+
 	public Guest create(Guest guest);
+
 	public Hotel create(Hotel hotel);
-	
+
 	public List<Booking> getBookingsByGuest(Guest guest);
 }

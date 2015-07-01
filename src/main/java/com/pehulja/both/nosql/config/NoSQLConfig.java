@@ -18,15 +18,15 @@ import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepos
 @EnableCouchbaseRepositories(basePackages = "com.pehulja.both.nosql.repositories")
 @PropertySource("classpath:application.properties")
 @Profile("nosql")
-public class NoSQLConfig extends AbstractCouchbaseConfiguration{
-	
-    private static final String PROPERTY_COUCHBASE_LOCATION = "couchbase.host";
-    private static final String PROPERTY_COUCHBASE_BACKET = "couchbase.backet";
-    private static final String PROPERTY_COUCHBASE_PASSWORD = "couchbase.password";
-    
-    @Resource
-    private Environment env;
-    
+public class NoSQLConfig extends AbstractCouchbaseConfiguration {
+
+	private static final String PROPERTY_COUCHBASE_LOCATION = "couchbase.host";
+	private static final String PROPERTY_COUCHBASE_BACKET = "couchbase.backet";
+	private static final String PROPERTY_COUCHBASE_PASSWORD = "couchbase.password";
+
+	@Resource
+	private Environment env;
+
 	@Override
 	protected List<String> bootstrapHosts() {
 		return Arrays.asList(env.getProperty(PROPERTY_COUCHBASE_LOCATION));

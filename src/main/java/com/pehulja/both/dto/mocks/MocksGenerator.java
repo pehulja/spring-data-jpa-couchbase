@@ -11,20 +11,20 @@ import com.pehulja.both.dto.Hotel;
 
 @Component
 public class MocksGenerator {
-	
-	public Guest getMockGuest(){
+
+	public Guest getMockGuest() {
 		Guest guest = new Guest();
 		guest.setFio(RandomStringUtils.randomAlphabetic(20));
 		return guest;
 	}
-	
-	public Hotel getMockHotel(){
+
+	public Hotel getMockHotel() {
 		Hotel hotel = new Hotel();
 		hotel.setName(RandomStringUtils.randomAlphabetic(10));
 		return hotel;
 	}
-	
-	public Booking getMockBooking(Hotel hotel, Guest guest){
+
+	public Booking getMockBooking(Hotel hotel, Guest guest) {
 		Booking booking = new Booking();
 		booking.setDate(new Date());
 		booking.setGuest(guest);

@@ -9,11 +9,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "guest")
 public class Guest {
-	
+
 	@Id
 	@GeneratedValue
 	private int id;
-	
+
 	@Column(name = "fio")
 	private String fio;
 

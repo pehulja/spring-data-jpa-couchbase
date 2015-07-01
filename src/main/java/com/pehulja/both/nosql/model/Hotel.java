@@ -8,7 +8,7 @@ import org.springframework.data.couchbase.core.mapping.Field;
 public class Hotel {
 	@Id
 	private int id;
-	
+
 	@Field
 	private String name;
 
