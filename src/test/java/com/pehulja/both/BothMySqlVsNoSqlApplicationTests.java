@@ -20,16 +20,14 @@ import com.pehulja.both.dto.mocks.MocksGenerator;
 import com.pehulja.both.service.CRUDService;
 
 @Configuration
-@ComponentScan(basePackages = {"com.pehulja.both"})
+@ComponentScan(basePackages = { "com.pehulja.both" })
 class TestConfig {
 }
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={TestConfig.class}, loader=AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = { TestConfig.class }, loader = AnnotationConfigContextLoader.class)
 @ActiveProfiles(value = "jpa")
 public class BothMySqlVsNoSqlApplicationTests {
-
 
 	@Autowired
 	CRUDService crudService;
