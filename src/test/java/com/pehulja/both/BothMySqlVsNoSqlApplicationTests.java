@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.pehulja.both.dto.Booking;
@@ -17,6 +18,7 @@ import com.pehulja.both.service.CRUDService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = BothMySqlVsNoSqlApplication.class)
+@ActiveProfiles(value = "nosql")
 public class BothMySqlVsNoSqlApplicationTests {
 
 	@Autowired 
@@ -63,13 +65,13 @@ public class BothMySqlVsNoSqlApplicationTests {
 			System.out.println(bookings[i]);
 		}
 		
-		bookingsByGuest = crudService.getBookingsByGuest(guests[random.nextInt(guestLength)]);
+/*		bookingsByGuest = crudService.getBookingsByGuest(guests[random.nextInt(guestLength)]);
 		System.out.println("START ---- SPECIAL GUESTS BOOKINGS");
 		
 		for(Booking booking : bookingsByGuest){
 			System.out.println(booking.toString());
 		}
-		System.out.println("EXIT ----- SPECIAL GUESTS BOOKINGS");
+		System.out.println("EXIT ----- SPECIAL GUESTS BOOKINGS");*/
 
 		System.out.println("After sets");
 	}

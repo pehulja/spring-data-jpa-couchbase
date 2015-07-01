@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan("com.pehulja.both.sql")
 @PropertySource("classpath:application.properties")
 @EnableJpaRepositories("com.pehulja.both.sql.repositories")
-@Profile("nosql")
+@Profile("jpa")
 public class SQLConfig {
  
     private static final String PROPERTY_NAME_DATABASE_DRIVER = "db.driver";
@@ -40,7 +40,7 @@ public class SQLConfig {
     @Resource
     private Environment env;
  
-    @Bean
+/*    @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
  
@@ -50,7 +50,7 @@ public class SQLConfig {
         dataSource.setPassword(env.getRequiredProperty(PROPERTY_NAME_DATABASE_PASSWORD));
  
         return dataSource;
-    }
+    }*/
  
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
