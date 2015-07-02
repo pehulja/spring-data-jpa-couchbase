@@ -1,4 +1,4 @@
-package com.pehulja.both.sql.config;
+package com.pehulja.both.config;
 
 import java.util.Properties;
 
@@ -20,9 +20,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.pehulja.both.sql")
+@ComponentScan("com.pehulja.both")
 @PropertySource("classpath:application.properties")
-@EnableJpaRepositories(basePackages = "com.pehulja.both.sql.repositories", repositoryImplementationPostfix = "CustomImpl")
+@EnableJpaRepositories(basePackages = "com.pehulja.both.repositories", repositoryImplementationPostfix = "CustomImpl")
 @Profile("jpa")
 public class SQLConfig {
 
@@ -35,7 +35,7 @@ public class SQLConfig {
 	private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
 	private static final String PROPERTY_NAME_HIBERNATE_STRATEGY = "hibernate.hbm2ddl.auto";
 
-	private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "com.pehulja.both.sql.model";
+	private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "com.pehulja.both.model";
 
 	@Autowired
 	private Environment env;

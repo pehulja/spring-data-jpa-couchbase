@@ -1,4 +1,4 @@
-package com.pehulja.both.nosql.config;
+package com.pehulja.both.config;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.springframework.data.couchbase.config.AbstractCouchbaseConfiguration;
 import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepositories;
 
 @Configuration
-@ComponentScan("com.pehulja.both.nosql")
-@EnableCouchbaseRepositories(basePackages = "com.pehulja.both.nosql.repositories")
+@ComponentScan("com.pehulja.both")
+@EnableCouchbaseRepositories(basePackages = "com.pehulja.both.repositories", repositoryImplementationPostfix = "CustomImpl")
 @PropertySource("classpath:application.properties")
 @Profile("nosql")
 public class NoSQLConfig extends AbstractCouchbaseConfiguration {

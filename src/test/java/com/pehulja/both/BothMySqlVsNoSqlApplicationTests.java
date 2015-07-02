@@ -12,11 +12,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
-
-import com.pehulja.both.dto.Booking;
-import com.pehulja.both.dto.Guest;
-import com.pehulja.both.dto.Hotel;
 import com.pehulja.both.dto.mocks.MocksGenerator;
+import com.pehulja.both.model.Hotel;
 import com.pehulja.both.service.CRUDService;
 
 @Configuration
@@ -26,7 +23,7 @@ class TestConfig {
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { TestConfig.class }, loader = AnnotationConfigContextLoader.class)
-@ActiveProfiles(value = "jpa")
+@ActiveProfiles(value = "nosql")
 public class BothMySqlVsNoSqlApplicationTests {
 
 	@Autowired
@@ -41,43 +38,22 @@ public class BothMySqlVsNoSqlApplicationTests {
 		System.out.println("Before sets");
 		Random random = new Random();
 
-		Guest[] guests = new Guest[1 + random.nextInt(2)];
 		Hotel[] hotels = new Hotel[1 + random.nextInt(1)];
-		Booking[] bookings = new Booking[1 + random.nextInt(15)];
-		List<Booking> bookingsByGuest = null;
 
 		int hotelsLength = hotels.length;
-		int guestLength = guests.length;
-
-		for (int i = 0; i < guests.length; i++) {
-			guests[i] = crudService.create(mocksGenerator.getMockGuest());
-		}
 
 		for (int i = 0; i < hotels.length; i++) {
 			hotels[i] = crudService.create(mocksGenerator.getMockHotel());
-		}
-
-		for (int i = 0; i < bookings.length; i++) {
-			bookings[i] = crudService.create(mocksGenerator.getMockBooking(hotels[random.nextInt(hotelsLength)],
-					guests[random.nextInt(guestLength)]));
-		}
-
-		for (int i = 0; i < guests.length; i++) {
-			System.out.println(guests[i]);
 		}
 
 		for (int i = 0; i < hotels.length; i++) {
 			System.out.println(hotels[i]);
 		}
 
-		for (int i = 0; i < bookings.length; i++) {
-			System.out.println(bookings[i]);
-		}
-
-		bookingsByGuest = crudService.getBookingsByGuest(guests[random.nextInt(guestLength)]);
+		List<Hotel> hotelsByName = crudService.getHotelByName(hotels[random.nextInt(hotelsLength)]);
 		System.out.println("START ---- SPECIAL GUESTS BOOKINGS");
 
-		for (Booking booking : bookingsByGuest) {
+		for (Hotel booking : hotelsByName) {
 			System.out.println(booking.toString());
 		}
 		System.out.println("EXIT ----- SPECIAL GUESTS BOOKINGS");
