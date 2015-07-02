@@ -50,9 +50,8 @@ public class CouchbaseService implements CRUDService {
 	}
 
 	public List<Booking> getBookingsByGuest(Guest guest) {
-		System.out.println(template);
 		Query query = new Query();
-		query.setKey(ComplexKey.of(convertor.convert(guest)));
+		query.setKey(ComplexKey.of(convertor.convert(guest).getId()));
 		// query.setKey(ComplexKey.of("1435085258634"));
 		List<com.pehulja.both.nosql.model.Booking> bookings = bookingRepository.findByGuest(query);
 		// List<com.pehulja.both.nosql.model.Booking> bookings =

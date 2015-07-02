@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @ComponentScan("com.pehulja.both.sql")
 @PropertySource("classpath:application.properties")
-@EnableJpaRepositories("com.pehulja.both.sql.repositories")
+@EnableJpaRepositories(basePackages = "com.pehulja.both.sql.repositories", repositoryImplementationPostfix = "CustomImpl")
 @Profile("jpa")
 public class SQLConfig {
 
