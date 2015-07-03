@@ -1,9 +1,13 @@
 package com.pehulja.both.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.Id;
@@ -23,6 +27,10 @@ public class Hotel {
 	@Column(name = "name")
 	private String name;
 
+	@Field
+	@OneToMany(mappedBy = "hotel", cascade=CascadeType.ALL)
+	private List<Room> rooms;
+
 	public int getId() {
 		return id;
 	}
@@ -38,9 +46,17 @@ public class Hotel {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public List<Room> getRooms() {
+		return rooms;
+	}
+
+	public void setRooms(List<Room> rooms) {
+		this.rooms = rooms;
+	}
 
 	@Override
 	public String toString() {
-		return "Hotel [id=" + id + ", name=" + name + "]";
+		return "Hotel [id=" + id + ", name=" + name + ", rooms=" + rooms + "]";
 	}
 }

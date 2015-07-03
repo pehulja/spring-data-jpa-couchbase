@@ -6,4 +6,5 @@ import com.pehulja.both.model.Hotel;
 
 public interface HotelRepositoryCustom {
 	public List<Hotel> getHotelViaName(String name);
+
 }
