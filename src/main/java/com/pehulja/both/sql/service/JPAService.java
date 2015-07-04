@@ -52,6 +52,9 @@ public class JPAService implements CRUDService {
 		for (com.pehulja.both.sql.model.Booking booking : bookings) {
 			bookingsDTOs.add(convertor.convert(booking));
 		}
+		
+		System.out.println("LA LA LA");
+
 		return bookingsDTOs;
 	}
 }
