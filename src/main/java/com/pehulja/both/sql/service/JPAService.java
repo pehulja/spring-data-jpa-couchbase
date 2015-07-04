@@ -49,7 +49,8 @@ public class JPAService implements CRUDService {
 		com.pehulja.both.sql.model.Guest guestEntity = guestRepository.findOne(guest.getId());
 		List<com.pehulja.both.sql.model.Booking> bookings = bookingRepository.getBookingsByGuest(guestEntity);
 		List<Booking> bookingsDTOs = new ArrayList<Booking>(bookings.size());
-		System.out.println("PAPAPA2222222222");
+		System.out.println("PAPAPA2222222222 FIXED");
+
 
 		for (com.pehulja.both.sql.model.Booking booking : bookings) {
 			bookingsDTOs.add(convertor.convert(booking));
