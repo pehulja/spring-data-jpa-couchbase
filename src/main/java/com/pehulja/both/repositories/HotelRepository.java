@@ -2,8 +2,6 @@ package com.pehulja.both.repositories;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.data.repository.CrudRepository;
 
 import com.pehulja.both.model.Hotel;

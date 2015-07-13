@@ -2,6 +2,7 @@ package com.pehulja.both.service.impl.sql;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class CRUDServiceImpl implements CRUDService {
 	@Autowired
 	private RoomRepository roomRepository;
 	
+	@Autowired
+	EntityManager entityManager;
+	
 	public Hotel create(Hotel hotel) {
 
 		return hotelRepository.save(hotel);
@@ -34,7 +38,7 @@ public class CRUDServiceImpl implements CRUDService {
 	public List<Hotel> getHotelByName(Hotel hotel) {
 		return hotelRepository.getHotelViaName(hotel.getName());
 	}
-
+	
 	@Transactional
 	public Hotel get(Integer id) {
 		Hotel hotel =  hotelRepository.findOne(id);
